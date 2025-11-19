@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import { useLocation } from "wouter";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { UserPlus, UserCheck, ClipboardList } from "lucide-react";
+import { NewPatientFlow } from "@/components/NewPatientFlow";
 import { AppointmentForm } from "@/components/AppointmentForm";
 
 type AppointmentType = "new" | "existing" | "intake" | null;
@@ -42,17 +43,23 @@ export default function BookAppointment() {
   ];
 
   if (selectedType) {
+    const handleBack = () => {
+      setSelectedType(null);
+      setLocation("/book-appointment");
+    };
+
     return (
       <div className="min-h-screen bg-background">
         <Header />
         <main className="container mx-auto px-4 md:px-6 py-12">
-          <AppointmentForm
-            appointmentType={selectedType}
-            onBack={() => {
-              setSelectedType(null);
-              setLocation("/book-appointment");
-            }}
-          />
+          {selectedType === "new" ? (
+            <NewPatientFlow onBack={handleBack} />
+          ) : (
+            <AppointmentForm
+              appointmentType={selectedType}
+              onBack={handleBack}
+            />
+          )}
         </main>
         <Footer />
       </div>

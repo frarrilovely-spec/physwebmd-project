@@ -742,8 +742,8 @@ export function AppointmentForm({ appointmentType, onBack }: AppointmentFormProp
                     <ArrowRight className="ml-2 h-4 w-4" />
                   </Button>
                 ) : (
-                  <Button type="submit" disabled={isSubmitting} data-testid="button-submit-appointment">
-                    {isSubmitting ? (
+                  <Button type="submit" disabled={createAppointmentMutation.isPending} data-testid="button-submit-appointment">
+                    {createAppointmentMutation.isPending ? (
                       <>
                         <Loader2 className="mr-2 h-4 w-4 animate-spin" />
                         Submitting...

@@ -1,0 +1,167 @@
+w Patient consists of multiple steps. Persist state across steps.
+
+STEP 1 – Contact Verification
+- Screen title: “Verify your contact”
+- User can choose verification via:
+  - Email (default) OR
+  - Phone (mobile)
+- Field(s):
+  - Email address OR Phone number (depending on selection)
+- Button: “Send Code”
+- After sending, show OTP screen:
+  - Six input boxes for the code
+  - Text: “We’ve sent a one-time passcode to [email/phone]. Enter it to continue.”
+  - Button: “Continue”
+  - Link: “Didn’t receive code? Resend.”
+
+STEP 2 – Who are you seeking help for?
+- Title: “Who are you seeking help for?”
+- Two large selectable cards/buttons:
+  - “Myself”
+  - “Someone else”
+- Button: “Next”
+- Store selection as patientRelationshipContext.
+
+STEP 3 – Your Information
+- Title: “Your Information”
+- Fields (all with clear labels and placeholders):
+  - First Name (text)
+  - Middle Name (text, optional)
+  - Last Name (text)
+  - Date of Birth (date picker or text input)
+  - Cell Number (tel)
+  - Gender (radio buttons):
+    - Male
+    - Female
+- Primary Address group:
+  - Street Name (text)
+  - Apt, Suite, etc (text, optional)
+  - City (text)
+  - State (dropdown with US states – can mock list)
+  - ZIP Code (text)
+- “How did you hear about us?”:
+  - Dropdown with options like:
+    - Social Media
+    - Friend/Family
+    - Doctor Referral
+    - Insurance Directory
+    - Google Search
+    - Other
+- Button: “Continue”
+- Basic validation: required fields should show inline error messages.
+
+STEP 4 – Your Concern or Reason for Consultation
+- Title: “Your concern or reason for consultation”
+- Show a list of radio buttons (or multi-select checkboxes if you prefer). Use these options:
+  - Anxiety / Panic Symptoms
+  - Obsessive-Compulsive Disorder (OCD)
+  - Bipolar Mood Disorder
+  - Post-Traumatic Stress Disorder (PTSD)
+  - Depressive Symptoms / Major Depression
+  - Attention-Deficit/Hyperactivity Disorder (ADHD)
+  - Postpartum Depression / Perinatal Mood Concerns
+  - I’m Not Sure – I would like an assessment
+  - Eating Disorder / Disordered Eating Concerns
+  - Personality Disorder or Personality-Related Difficulties
+  - Substance Use / Addiction Concerns
+  - Self-Harm Thoughts or Behaviors
+  - Any Other – provide a multi-line text area
+- Allow selecting at least one concern; if “Any Other” is chosen, the text area becomes required.
+- Button: “Continue”
+
+STEP 5 – Insurance Information
+- Title: “Insurance Information”
+- Fields:
+  - Member First Name
+  - Member Last Name
+  - Member Date of Birth
+  - Insurance Name
+  - Insurance Member ID
+  - Policy Holder (dropdown):
+    - Me
+    - Spouse
+    - Parent
+    - Step Parent
+    - Other (when selected, show an extra text input)
+- Button: “Continue”
+- Optional: show subtle helper text: “We’ll verify your benefits before your appointment.”
+
+STEP 6 – Mental Health Questions
+- Title: “Let’s get some information about your mental health”
+- Short consent text: “I agree to provide this information in upcoming screens.”
+  - Implement as a checkbox that must be checked to continue.
+- Questions:
+  1) “Have you been admitted to a hospital or inpatient facility for mental health concerns within the past year?”
+     - Yes / No (radio)
+  2) “Do you currently feel at risk of harming yourself?”
+     - Yes / No (radio)
+     - If Yes, show a red banner: “If you are in crisis or considering harming yourself, please call 911 or go to the nearest emergency room. This online booking system is not for emergencies.”
+  3) “Please share about your relationship with alcohol:”
+     - Dropdown with options:
+       - After drinking alcohol, I feel healthy
+       - After drinking alcohol, I feel unhealthy
+       - I am unsure
+       - I do not drink alcohol
+  4) “Do you use drugs?”
+     - Yes / No (radio)
+     - If Yes, show an additional dropdown:
+       - Daily
+       - Once a week
+       - Once a month
+       - Occasionally
+       - I have used drugs in the past but not currently
+- Button: “Continue”
+
+STEP 7 – Emergency Contact
+- Title: “Emergency Contact Details”
+- Fields:
+  - First Name
+  - Middle Name (optional)
+  - Last Name
+  - Relationship (dropdown with):
+    - Caregiver
+    - Friend
+    - Parent
+    - Spouse
+    - Child
+    - Sibling
+    - Other (with text input if chosen)
+  - Phone Number
+- Button: “Continue”
+
+STEP 8 – Appointment Scheduling
+- Title: “Schedule your appointment”
+- Show:
+  - Visit type (In-person, Telehealth) – radio buttons.
+  - Date picker or a simple mocked calendar.
+  - List of available time slots (mock data; e.g., “9:00 AM, 10:30 AM, 2:00 PM”).
+  - Optional “Preferred provider” dropdown (e.g., “First available”, “Dr. Smith”, etc. using mock names).
+- After selecting date + time (and maybe provider), enable “Continue”.
+
+STEP 9 – Review & Confirm
+- Title: “Review your details”
+- Show a summary card with all collected information:
+  - Name, DOB, contact, address
+  - Who they’re seeking help for
+  - Concerns selected
+  - Insurance info
+  - Mental health questionnaire answers
+  - Emergency contact
+  - Appointment date, time, type, provider
+- Each section should have a small “Edit” link that jumps back to that step.
+- At bottom:
+  - Checkbox list for:
+    - “I agree to the Terms & Conditions.”
+    - “I acknowledge the Privacy Policy / HIPAA Notice.”
+    - “I consent to receive appointment reminders via email/SMS.”
+  - Primary button: “Confirm Appointment”
+
+STEP 10 – Confirmation Screen
+- Title: “Appointment Request Submitted”
+- Show:
+  - Thank you message with patient’s first name.
+  - Appointment details (date, time, type, provider).
+  - Text explaining: “A confirmation email and SMS will be sent to you with appointment details and, if telehealth, a secure video link.”
+- Buttons:
+  - “Back to Home”
+  - Optionally “Book Another Appointment”
