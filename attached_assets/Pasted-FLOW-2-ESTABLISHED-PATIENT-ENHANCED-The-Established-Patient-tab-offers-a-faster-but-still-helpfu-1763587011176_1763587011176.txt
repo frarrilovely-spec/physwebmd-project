@@ -1,0 +1,95 @@
+FLOW 2: ESTABLISHED PATIENT (ENHANCED)
+
+The Established Patient tab offers a faster but still helpful flow.
+
+STEP E0 – Choose lookup method
+- Title: “Welcome back. Let’s find your account.”
+- Radios:
+  - Email address
+  - Mobile phone
+  - Patient ID / MRN (optional in prototype)
+- Button: “Continue”
+
+STEP E1 – Verify contact (OTP)
+- Depending on choice in E0, show a single field:
+  - Email OR Phone OR Patient ID
+- Button: “Send Code”
+- Then OTP screen:
+  - 6-digit code inputs
+  - Text: “We’ve sent a one-time passcode to [email/phone]. Enter it to continue.”
+  - Button: “Continue”
+  - Link: “Didn’t receive a code? Resend.”
+- Mock logic:
+  - If identifier not found, show:
+    - Message: “We couldn’t find an existing patient with this information.”
+    - Buttons:
+      - “Try again”
+      - “Book as a New Patient” (switches to New Patient tab and pre-fills email/phone)
+
+STEP E2 – Select patient profile
+- After successful verification, assume API returns 1–N patients linked to this contact.
+- If more than one:
+  - Title: “Who is this appointment for?”
+  - Show a list of cards with:
+    - Name, DOB, last visit date, primary provider.
+  - User clicks a card to select.
+- If only one patient, auto-select and skip this step.
+- Button: “Continue”
+
+STEP E3 – Visit details
+- Title: “Visit details”
+- Fields:
+  1) Visit type (radio or select):
+     - Follow-up medication management
+     - Follow-up therapy
+     - New concern
+     - Paperwork / forms
+     - Other (with small text field when chosen)
+  2) Visit mode:
+     - In-person
+     - Telehealth
+  3) Provider preference:
+     - Same provider as last visit (default)
+     - First available provider
+     - Choose provider (dropdown with mock names)
+  4) Urgency:
+     - As soon as possible
+     - Within 1 week
+     - Within 2–4 weeks
+- Button: “See available times”
+
+STEP E4 – Schedule appointment
+- Reuse the same scheduler component from New Patient (Step 8) but:
+  - Pre-filter slots based on:
+    - chosen provider preference,
+    - visit mode,
+    - urgency window (e.g., limit dates offered).
+- Show a highlighted “Best match” slot at the top.
+- User picks:
+  - Date
+  - Time slot
+- Button: “Continue”
+
+STEP E5 – Review & confirm
+- Title: “Review your appointment”
+- Show a summary card:
+  - Patient name
+  - Provider
+  - Visit type
+  - Visit mode
+  - Date & time
+- “Change” links next to Provider, Date, Time (navigate back to the relevant step).
+- Checkboxes:
+  - “I agree to the cancellation and no-show policy.”
+  - “I consent to receive appointment reminders via email/SMS.”
+- Primary button: “Confirm appointment”
+
+STEP E6 – Confirmation
+- Title: “You’re all set, [First Name]!”
+- Show appointment card with:
+  - Date, time, provider, mode.
+- Text:
+  - “We’ve sent a confirmation email and SMS with your appointment details and, if telehealth, a secure video link.”
+- Buttons:
+  - “Back to home”
+  - “Book another appointment” (optional behaviour)

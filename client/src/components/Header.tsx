@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
 import { Link, useLocation } from "wouter";
-import logoUrl from "@assets/ChatGPT Image Nov 13, 2025, 07_21_40 AM_1763000509257.png";
+import logoUrl from "@assets/ChatGPT Image Nov 15, 2025, 08_48_07 PM_1763586534590.png";
 
 export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);

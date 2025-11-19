@@ -5,7 +5,8 @@ import { useLocation } from "wouter";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { UserPlus, UserCheck, ClipboardList } from "lucide-react";
 import { NewPatientFlow } from "@/components/NewPatientFlow";
-import { AppointmentForm } from "@/components/AppointmentForm";
+import { ExistingPatientFlow } from "@/components/ExistingPatientFlow";
+import { IntakeFormFlow } from "@/components/IntakeFormFlow";
 
 type AppointmentType = "new" | "existing" | "intake" | null;
 
@@ -54,12 +55,11 @@ export default function BookAppointment() {
         <main className="container mx-auto px-4 md:px-6 py-12">
           {selectedType === "new" ? (
             <NewPatientFlow onBack={handleBack} />
-          ) : (
-            <AppointmentForm
-              appointmentType={selectedType}
-              onBack={handleBack}
-            />
-          )}
+          ) : selectedType === "existing" ? (
+            <ExistingPatientFlow onBack={handleBack} />
+          ) : selectedType === "intake" ? (
+            <IntakeFormFlow onBack={handleBack} />
+          ) : null}
         </main>
         <Footer />
       </div>

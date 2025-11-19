@@ -1,4 +1,6 @@
-import { type Appointment, type InsertAppointment, type ContactSubmission, type InsertContactSubmission } from "@shared/schema";
+import { type Appointment, type InsertAppointment, type ContactSubmission, type InsertContactSubmission, appointments, contactSubmissions } from "@shared/schema";
+import { db } from "./db";
+import { eq, desc } from "drizzle-orm";
 import { randomUUID } from "crypto";
 
 export interface IStorage {
@@ -9,52 +11,52 @@ export interface IStorage {
   getContactSubmissions(): Promise<ContactSubmission[]>;
 }
 
-export class MemStorage implements IStorage {
-  private appointments: Map<string, Appointment>;
-  private contactSubmissions: Map<string, ContactSubmission>;
-
-  constructor() {
-    this.appointments = new Map();
-    this.contactSubmissions = new Map();
-  }
-
+export class DatabaseStorage implements IStorage {
   async createAppointment(insertAppointment: InsertAppointment): Promise<Appointment> {
     const id = randomUUID();
-    const appointment: Appointment = {
-      ...insertAppointment,
-      id,
-      createdAt: new Date(),
-    };
-    this.appointments.set(id, appointment);
+    const [appointment] = await db
+      .insert(appointments)
+      .values({
+        ...insertAppointment,
+        id,
+      })
+      .returning();
     return appointment;
   }
 
   async getAppointments(): Promise<Appointment[]> {
-    return Array.from(this.appointments.values()).sort(
-      (a, b) => b.createdAt.getTime() - a.createdAt.getTime()
-    );
+    return await db
+      .select()
+      .from(appointments)
+      .orderBy(desc(appointments.createdAt));
   }
 
   async getAppointment(id: string): Promise<Appointment | undefined> {
-    return this.appointments.get(id);
+    const [appointment] = await db
+      .select()
+      .from(appointments)
+      .where(eq(appointments.id, id));
+    return appointment || undefined;
   }
 
   async createContactSubmission(insertSubmission: InsertContactSubmission): Promise<ContactSubmission> {
     const id = randomUUID();
-    const submission: ContactSubmission = {
-      ...insertSubmission,
-      id,
-      createdAt: new Date(),
-    };
-    this.contactSubmissions.set(id, submission);
+    const [submission] = await db
+      .insert(contactSubmissions)
+      .values({
+        ...insertSubmission,
+        id,
+      })
+      .returning();
     return submission;
   }
 
   async getContactSubmissions(): Promise<ContactSubmission[]> {
-    return Array.from(this.contactSubmissions.values()).sort(
-      (a, b) => b.createdAt.getTime() - a.createdAt.getTime()
-    );
+    return await db
+      .select()
+      .from(contactSubmissions)
+      .orderBy(desc(contactSubmissions.createdAt));
   }
 }
 
-export const storage = new MemStorage();
+export const storage = new DatabaseStorage();
