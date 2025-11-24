@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
 import { ArrowRight, Calendar, Video, Users } from "lucide-react";
 import heroBackground from "@assets/generated_images/patient_consultation_hero_background.png";
+import journeyImage from "@assets/generated_images/doctor_consultation_background_image.png";
 
 export function HeroSection() {
   return (
@@ -81,8 +82,13 @@ export function HeroSection() {
           <div className="relative hidden lg:block">
             <div className="absolute -top-4 -right-4 w-72 h-72 bg-primary/20 rounded-full blur-3xl" />
             <div className="absolute -bottom-4 -left-4 w-72 h-72 bg-accent/30 rounded-full blur-3xl" />
-            <div className="relative bg-card rounded-2xl shadow-2xl p-8 border border-border">
-              <div className="space-y-6">
+            <div className="relative bg-card rounded-2xl shadow-2xl overflow-hidden border border-border">
+              <div 
+                className="absolute inset-0 bg-cover bg-center opacity-15"
+                style={{ backgroundImage: `url(${journeyImage})` }}
+              />
+              <div className="absolute inset-0 bg-gradient-to-br from-background/90 to-background/70" />
+              <div className="relative z-10 p-8 space-y-6">
                 <div className="space-y-2">
                   <h3 className="text-2xl font-bold text-foreground">Start Your Journey</h3>
                   <p className="text-muted-foreground">Choose how you'd like to begin care</p>
