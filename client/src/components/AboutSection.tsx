@@ -1,4 +1,5 @@
 import { CheckCircle2 } from "lucide-react";
+import aboutBackground from "@assets/generated_images/therapy_room_interior_background.png";
 
 export function AboutSection() {
   const features = [
@@ -11,8 +12,13 @@ export function AboutSection() {
   ];
 
   return (
-    <section id="about" className="py-20 bg-accent/20">
-      <div className="container mx-auto px-4 md:px-6">
+    <section id="about" className="relative py-20 overflow-hidden">
+      <div 
+        className="absolute inset-0 bg-cover bg-center opacity-10"
+        style={{ backgroundImage: `url(${aboutBackground})` }}
+      />
+      <div className="absolute inset-0 bg-accent/20" />
+      <div className="container mx-auto px-4 md:px-6 relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div className="space-y-6">
             <div className="space-y-4">

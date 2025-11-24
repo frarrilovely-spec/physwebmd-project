@@ -1,13 +1,19 @@
 import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
 import { ArrowRight, Calendar, Video, Users } from "lucide-react";
+import heroBackground from "@assets/generated_images/patient_consultation_hero_background.png";
 
 export function HeroSection() {
   return (
-    <section className="relative overflow-hidden bg-gradient-to-br from-primary/5 via-background to-accent/10 py-20 md:py-32">
-      <div className="absolute inset-0 bg-grid-slate-100 [mask-image:linear-gradient(0deg,white,rgba(255,255,255,0.6))] -z-10" />
+    <section className="relative overflow-hidden py-20 md:py-32">
+      <div 
+        className="absolute inset-0 bg-cover bg-center"
+        style={{ backgroundImage: `url(${heroBackground})` }}
+      />
+      <div className="absolute inset-0 bg-gradient-to-r from-background/95 via-background/90 to-background/80" />
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-background/40" />
       
-      <div className="container mx-auto px-4 md:px-6">
+      <div className="container mx-auto px-4 md:px-6 relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div className="space-y-8">
             <div className="space-y-4">
