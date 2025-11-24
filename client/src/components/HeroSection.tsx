@@ -84,10 +84,10 @@ export function HeroSection() {
             <div className="absolute -bottom-4 -left-4 w-72 h-72 bg-accent/30 rounded-full blur-3xl" />
             <div className="relative bg-card rounded-2xl shadow-2xl overflow-hidden border border-border">
               <div 
-                className="absolute inset-0 bg-cover bg-center opacity-15"
+                className="absolute inset-0 bg-cover bg-center opacity-30"
                 style={{ backgroundImage: `url(${journeyImage})` }}
               />
-              <div className="absolute inset-0 bg-gradient-to-br from-background/90 to-background/70" />
+              <div className="absolute inset-0 bg-gradient-to-br from-background/85 to-background/65" />
               <div className="relative z-10 p-8 space-y-6">
                 <div className="space-y-2">
                   <h3 className="text-2xl font-bold text-foreground">Start Your Journey</h3>
