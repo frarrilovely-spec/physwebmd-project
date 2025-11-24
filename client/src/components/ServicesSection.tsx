@@ -19,10 +19,10 @@ export function ServicesSection() {
             return (
               <Card key={service.id} className="relative overflow-hidden hover-elevate transition-all" data-testid={`card-service-${service.id}`}>
                 <div 
-                  className="absolute inset-0 bg-cover bg-center opacity-5"
+                  className="absolute inset-0 bg-cover bg-center opacity-70"
                   style={{ backgroundImage: `url(${serviceBackground})` }}
                 />
-                <div className="absolute inset-0 bg-gradient-to-br from-background/95 to-background/90" />
+                <div className="absolute inset-0 bg-gradient-to-br from-background/60 to-background/50" />
                 <div className="relative z-10">
                   <CardHeader>
                     <div className="rounded-lg bg-primary/10 w-16 h-16 flex items-center justify-center mb-4 mx-auto">
