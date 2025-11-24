@@ -10,78 +10,103 @@ import groupTherapyIcon from "@assets/generated_images/group_therapy_icon.png";
 import dbtIcon from "@assets/generated_images/dbt_skill_therapy_icon.png";
 import schemaIcon from "@assets/generated_images/schema_therapy_icon.png";
 
+import psychiatricBg from "@assets/generated_images/psychiatric_evaluation_clinical_session.png";
+import psychotherapyBg from "@assets/generated_images/individual_psychotherapy_session.png";
+import medicationBg from "@assets/generated_images/medication_management_consultation.png";
+import childTherapyBg from "@assets/generated_images/child_and_adolescent_therapy.png";
+import spravatoBg from "@assets/generated_images/spravato_treatment_facility.png";
+import tmsBg from "@assets/generated_images/tms_therapy_treatment_room.png";
+import couplesBg from "@assets/generated_images/couples_therapy_session.png";
+import groupTherapyBg from "@assets/generated_images/group_therapy_circle_session.png";
+import dbtBg from "@assets/generated_images/dbt_skills_training_session.png";
+import schemaBg from "@assets/generated_images/schema_therapy_session.png";
+import playTherapyBg from "@assets/generated_images/child_play_therapy_room.png";
+import wellnessBg from "@assets/generated_images/mental_wellness_and_self-care.png";
+
 export const services = [
   {
     id: "psychiatric-evaluations",
     title: "Psychiatric Evaluations",
     description: "Comprehensive assessments to diagnose behavioral health conditions and create tailored treatment plans.",
     iconImage: psychiatricIcon,
+    backgroundImage: psychiatricBg,
   },
   {
     id: "psychotherapy",
     title: "Psychotherapy",
     description: "Talk therapy to explore thoughts and feelings, develop coping skills, and improve behavioral well-being.",
     iconImage: psychotherapyIcon,
+    backgroundImage: psychotherapyBg,
   },
   {
     id: "medication-management",
     title: "Medication Management",
     description: "Prescribing and monitoring medications to treat behavioral health conditions, adjusting as needed for effectiveness.",
     iconImage: medicationIcon,
+    backgroundImage: medicationBg,
   },
   {
     id: "child-adolescent-therapy",
     title: "Child/Adolescent Therapy",
     description: "Specialized therapy for young people to address emotional and behavioral issues through age-appropriate techniques.",
     iconImage: childTherapyIcon,
+    backgroundImage: childTherapyBg,
   },
   {
     id: "spravato",
     title: "Spravato",
     description: "Esketamine, a cutting-edge medication for severe depression, used alongside oral antidepressants, requiring medical supervision.",
     iconImage: spravatoIcon,
+    backgroundImage: spravatoBg,
   },
   {
     id: "tms",
     title: "TMS",
     description: "Non-invasive, state-of-the-art treatment using magnetic fields to stimulate brain cells, helping alleviate depression or OCD.",
     iconImage: tmsIcon,
+    backgroundImage: tmsBg,
   },
   {
     id: "couples-therapy",
     title: "Couples Therapy",
     description: "Guided sessions to improve communication, resolve conflicts, and strengthen relationships.",
     iconImage: couplesIcon,
+    backgroundImage: couplesBg,
   },
   {
     id: "group-therapy",
     title: "Group Therapy",
     description: "Therapy with a small group to provide support, share experiences, and gain diverse perspectives on similar issues.",
     iconImage: groupTherapyIcon,
+    backgroundImage: groupTherapyBg,
   },
   {
     id: "dbt-skill-therapy",
     title: "DBT Skill Therapy",
     description: "Long-term weekly program focused on mindfulness, emotion regulation, distress tolerance, and interpersonal effectiveness.",
     iconImage: dbtIcon,
+    backgroundImage: dbtBg,
   },
   {
     id: "schema-therapy",
     title: "Schema Therapy",
     description: "Long-term weekly program focused on deep inner work to address core unmet emotional needs.",
     iconImage: schemaIcon,
+    backgroundImage: schemaBg,
   },
   {
     id: "play-therapy",
     title: "Play Therapy",
     description: "Therapeutic approach using play to help children express feelings, resolve conflicts, and develop coping skills.",
     icon: Blocks,
+    backgroundImage: playTherapyBg,
   },
   {
     id: "general-wellness",
     title: "General Wellness",
     description: "Holistic approach to mental health focusing on overall well-being, stress management, and healthy lifestyle habits.",
     icon: Smile,
+    backgroundImage: wellnessBg,
   },
 ];
 

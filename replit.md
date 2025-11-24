@@ -119,6 +119,13 @@ The application runs on port 5000 (frontend) with Express backend on the same po
 - Saturday - Sunday: Closed
 
 ## Recent Changes
+- **Database Integration**: Migrated to PostgreSQL with Drizzle ORM (December 2024)
+- **Professional Healthcare Imagery**: 
+  - Generated 6 hero/background images for Hero, About, and Journey sections
+  - Generated 12 unique service-specific background images (70% opacity with gradients)
+  - Generated 10 custom service category icons with teal branding
+- **Logo Update**: Replaced with new PsychWebMD logo site-wide
+- **Routing**: Added /book alias to prevent 404 errors  
 - Initial project setup with React + Express fullstack
 - Implemented teal color scheme matching PsychWebMD branding
 - Created comprehensive landing page with all sections

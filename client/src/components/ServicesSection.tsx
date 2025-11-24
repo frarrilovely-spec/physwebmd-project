@@ -1,6 +1,5 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { services } from "@/lib/services-data";
-import serviceBackground from "@assets/generated_images/medical_team_collaboration_background.png";
 
 export function ServicesSection() {
   return (
@@ -18,11 +17,15 @@ export function ServicesSection() {
             const Icon = service.icon;
             return (
               <Card key={service.id} className="relative overflow-hidden hover-elevate transition-all" data-testid={`card-service-${service.id}`}>
-                <div 
-                  className="absolute inset-0 bg-cover bg-center opacity-70"
-                  style={{ backgroundImage: `url(${serviceBackground})` }}
-                />
-                <div className="absolute inset-0 bg-gradient-to-br from-background/60 to-background/50" />
+                {service.backgroundImage && (
+                  <>
+                    <div 
+                      className="absolute inset-0 bg-cover bg-center opacity-70"
+                      style={{ backgroundImage: `url(${service.backgroundImage})` }}
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-br from-background/60 to-background/50" />
+                  </>
+                )}
                 <div className="relative z-10">
                   <CardHeader>
                     <div className="rounded-lg bg-primary/10 w-16 h-16 flex items-center justify-center mb-4 mx-auto">
