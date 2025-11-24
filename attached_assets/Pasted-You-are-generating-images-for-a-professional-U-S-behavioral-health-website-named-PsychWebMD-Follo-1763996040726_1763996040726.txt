@@ -1,0 +1,56 @@
+You are generating images for a professional U.S. behavioral health website named PsychWebMD. 
+Follow these rules:
+
+STYLE REQUIREMENTS:
+- Clean, modern, soft medical style
+- Light teal + white color mood
+- Minimal, professional healthcare visuals
+- Friendly and calming atmosphere
+- No harsh colors, no intense emotions
+- Should look like premium U.S. medical clinic branding
+
+TASK 1 — BACKGROUND IMAGES:
+Generate 6 hero/background images to be used behind sections of the site.
+Each background should include:
+- Soft blur doctor environment
+- Professional U.S. medical clinic
+- Doctors talking to patients, smiling, soft lighting
+- Therapy room aesthetics (calm colors, natural light)
+- Nurses and doctors reviewing charts in a bright room
+- Should NOT include text or logos
+- Must match a pastel, soft UI like the one in PsychWebMD
+
+TASK 2 — CATEGORY IMAGES:
+Generate clean, simple, modern icons/images for each service category:
+
+1. Psychiatric Evaluations → Stethoscope + checklist (minimal)
+2. Psychotherapy → Chat bubbles with soft heart or calm wave symbol
+3. Medication Management → Pill + medical cross
+4. Child/Adolescent Therapy → Adult + child outline in supportive pose
+5. Spravato → Nasal spray icon (clean, modern)
+6. TMS → Coil-wave abstract symbol (soft electric pulse)
+7. Couples Therapy → Two outlines forming a heart or connection icon
+8. Group Therapy → Three minimal figures in a circle
+9. DBT Skill Therapy → Mindfulness/lotus/wave abstract symbol
+10. Schema Therapy → Layers or building blocks forming a calm structure
+
+ICON STYLE:
+- Flat minimal icons
+- Soft pastel teal
+- Rounded, friendly shapes
+- 1–2 colors max (light teal + gray)
+- Transparent or white background
+- No text inside icons
+
+OUTPUT:
+Deliver images separately with neutral filenames:
+- background-1
+- background-2
+- …
+- category-psychiatric-evaluations
+- category-psychotherapy
+- category-medication-management
+- category-child-therapy
+- etc.
+
+Make all images crisp, clean, and consistent with a premium U.S. medical brand.

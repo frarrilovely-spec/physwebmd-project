@@ -1,65 +1,75 @@
-import { Brain, Heart, Pill, Baby, Sparkles, Zap, Users, UsersRound, Shield, Layers, Blocks, Smile } from "lucide-react";
+import { Blocks, Smile } from "lucide-react";
+import psychiatricIcon from "@assets/generated_images/psychiatric_evaluations_icon.png";
+import psychotherapyIcon from "@assets/generated_images/psychotherapy_icon.png";
+import medicationIcon from "@assets/generated_images/medication_management_icon.png";
+import childTherapyIcon from "@assets/generated_images/child_adolescent_therapy_icon.png";
+import spravatoIcon from "@assets/generated_images/spravato_treatment_icon.png";
+import tmsIcon from "@assets/generated_images/tms_therapy_icon.png";
+import couplesIcon from "@assets/generated_images/couples_therapy_icon.png";
+import groupTherapyIcon from "@assets/generated_images/group_therapy_icon.png";
+import dbtIcon from "@assets/generated_images/dbt_skill_therapy_icon.png";
+import schemaIcon from "@assets/generated_images/schema_therapy_icon.png";
 
 export const services = [
   {
     id: "psychiatric-evaluations",
     title: "Psychiatric Evaluations",
     description: "Comprehensive assessments to diagnose behavioral health conditions and create tailored treatment plans.",
-    icon: Brain,
+    iconImage: psychiatricIcon,
   },
   {
     id: "psychotherapy",
     title: "Psychotherapy",
     description: "Talk therapy to explore thoughts and feelings, develop coping skills, and improve behavioral well-being.",
-    icon: Heart,
+    iconImage: psychotherapyIcon,
   },
   {
     id: "medication-management",
     title: "Medication Management",
     description: "Prescribing and monitoring medications to treat behavioral health conditions, adjusting as needed for effectiveness.",
-    icon: Pill,
+    iconImage: medicationIcon,
   },
   {
     id: "child-adolescent-therapy",
     title: "Child/Adolescent Therapy",
     description: "Specialized therapy for young people to address emotional and behavioral issues through age-appropriate techniques.",
-    icon: Baby,
+    iconImage: childTherapyIcon,
   },
   {
     id: "spravato",
     title: "Spravato",
     description: "Esketamine, a cutting-edge medication for severe depression, used alongside oral antidepressants, requiring medical supervision.",
-    icon: Sparkles,
+    iconImage: spravatoIcon,
   },
   {
     id: "tms",
     title: "TMS",
     description: "Non-invasive, state-of-the-art treatment using magnetic fields to stimulate brain cells, helping alleviate depression or OCD.",
-    icon: Zap,
+    iconImage: tmsIcon,
   },
   {
     id: "couples-therapy",
     title: "Couples Therapy",
     description: "Guided sessions to improve communication, resolve conflicts, and strengthen relationships.",
-    icon: UsersRound,
+    iconImage: couplesIcon,
   },
   {
     id: "group-therapy",
     title: "Group Therapy",
     description: "Therapy with a small group to provide support, share experiences, and gain diverse perspectives on similar issues.",
-    icon: Users,
+    iconImage: groupTherapyIcon,
   },
   {
     id: "dbt-skill-therapy",
     title: "DBT Skill Therapy",
     description: "Long-term weekly program focused on mindfulness, emotion regulation, distress tolerance, and interpersonal effectiveness.",
-    icon: Shield,
+    iconImage: dbtIcon,
   },
   {
     id: "schema-therapy",
     title: "Schema Therapy",
     description: "Long-term weekly program focused on deep inner work to address core unmet emotional needs.",
-    icon: Layers,
+    iconImage: schemaIcon,
   },
   {
     id: "play-therapy",

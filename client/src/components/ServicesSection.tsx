@@ -18,13 +18,21 @@ export function ServicesSection() {
             return (
               <Card key={service.id} className="hover-elevate transition-all" data-testid={`card-service-${service.id}`}>
                 <CardHeader>
-                  <div className="rounded-lg bg-primary/10 w-12 h-12 flex items-center justify-center mb-4">
-                    <Icon className="h-6 w-6 text-primary" />
+                  <div className="rounded-lg bg-primary/10 w-16 h-16 flex items-center justify-center mb-4 mx-auto">
+                    {service.iconImage ? (
+                      <img 
+                        src={service.iconImage} 
+                        alt={service.title} 
+                        className="w-10 h-10 object-contain"
+                      />
+                    ) : Icon ? (
+                      <Icon className="h-8 w-8 text-primary" />
+                    ) : null}
                   </div>
-                  <CardTitle className="text-xl">{service.title}</CardTitle>
+                  <CardTitle className="text-xl text-center">{service.title}</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <CardDescription className="text-sm leading-relaxed">
+                  <CardDescription className="text-sm leading-relaxed text-center">
                     {service.description}
                   </CardDescription>
                 </CardContent>
